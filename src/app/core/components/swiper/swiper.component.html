@@ -1,0 +1,35 @@
+<div class="container">  
+  <swiper   
+    [slidesPerView]="myConfig.slidesPerView"
+    [spaceBetween]="myConfig.spaceBetween"
+    [loop]="myConfig.loop"
+    [autoplay]="myConfig.autoplay"
+    [pagination]="myConfig.pagination"
+    [navigation]="myConfig.navigation"
+    [breakpoints]="myConfig.breakpoints"
+  >
+  <!-- swiper  la component cua swiper.js-->
+  <!-- ng template , không render trực tiệp vào DOM. nghĩa là chỉ được render khi được yêu câu -->
+  
+    
+    
+  <ng-container *ngIf="comics$ | async as comics" >
+    <ng-template *ngFor="let slide of comics" swiperSlide>
+      <div class="card-swiper"  [routerLink]="['/comic',slide.id]">
+        <div class="rating">
+          <span>{{ slide.averageRating > 0 ? slide.averageRating + ' ⭐' : 'Not rated yet' }}</span>
+        </div>
+        <img [src]="slide.thumbnail" alt="{{ slide.name }}" />  
+        <div class="card-swiper-content">
+          <h3>{{ (slide.name || '').length > 20 ? (slide?.name | slice:0:10) + '...' : slide?.name }}</h3>
+          <p>  <span> {{slide.comicCategory.name}}</span>/ {{slide.onSaleDate | date:'dd/MM/yyyy'}}</p>          
+        </div>
+      </div>
+    </ng-template>
+  </ng-container>
+    
+  </swiper>
+  <!-- <div class="swiper-button-next"></div>
+  <div class="swiper-button-prev"></div> -->
+  <hr>
+</div>

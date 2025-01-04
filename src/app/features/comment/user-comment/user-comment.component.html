@@ -1,0 +1,67 @@
+<!-- <h3 id="commentss">commentss</h3>
+<ng-container *ngIf="comic.commentss" >
+  <div *ngFor="let cmt of comic.commentss" class="comments-box">
+    <div class="comments-header">
+        <div class="user-avatar"></div>
+        <div>
+            <strong class="text-white">{{cmt.applicationUser.userName}}</strong>
+            <div class="comments-meta">{{cmt.createAt | date: 'dd/MM/yyyy'}}</div>
+        </div>
+    </div>
+    <p>
+          {{cmt.content}}                
+    </p>
+    <div class="comments-actions">
+        <a href="#" class="action-btn">
+            <i class="bi bi-hand-thumbs-up"></i> {{cmt.likeCount}}
+        </a>
+        <a href="#" class="action-btn">
+            <i class="bi bi-hand-thumbs-down"></i> 0
+        </a>
+        <a href="#" class="action-btn">Reply</a>
+        <a href="#" class="action-btn">Report</a>
+    </div>
+</div>
+</ng-container> -->
+
+
+
+
+
+<form class="" #form="ngForm" (ngSubmit)="OnSubmitComment()">
+    <div class="form-section mt-5">
+        <h4>Reviews after reading (12):</h4>
+        <ul>
+            <li><p>⚠️ Is there something wrong with the chapter? Please notify via the "Complain" button and indicate the chapter numbers.</p></li>
+            <li><p>⚠️ The minimum comment length is 200 characters. Respect yourself and others!</p></li>
+            <li><p>⚠️ Comments are moderated, there is no point in writing again.</p></li>
+        </ul>
+        <!-- Textarea for review -->
+        <div class="mb-3">
+            <textarea  
+             [(ngModel)]="model.content" 
+             id="content"
+             name="content"
+             class="form-control" 
+             rows="4" 
+             placeholder="Write your review here..."></textarea>
+        </div>
+        <!-- Question Section -->
+        <div class="alert alert-warning d-flex align-items-center mb-3">
+            <span class="me-2">⚠️</span>
+            <div>
+                How many letters are in the word 'HỮU TRUNG ĐẸP TRAI '? (15) (in numbers) *
+            </div>
+        </div>
+        <input 
+            [(ngModel)]="model.answer" 
+            id="answer"
+            name="answer"
+            type="text" 
+            class="form-control mb-3" 
+            placeholder="Enter the answer to the question">    
+        <div class="d-flex justify-content-between align-items-center">
+            <button type="submit" class="btn btn-warning px-4">Submit</button>            
+        </div>
+      </div>
+</form>

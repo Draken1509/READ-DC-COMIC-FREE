@@ -1,0 +1,98 @@
+@import 'swiper/scss';
+@import 'swiper/scss/navigation';
+@import 'swiper/scss/pagination';
+
+/* Swiper container */
+.swiper-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  
+  /* Swiper slide */
+  .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .card-swiper {
+    width: 200px;
+    background: #1c1c1e;
+    color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    position: relative; /* Để định vị phần đánh giá sao */
+    transition: transform 0.3s ease; /* Hiệu ứng khi hover card-swiper */
+    cursor: pointer;
+  }
+  
+  .card-swiper:hover {
+    transform: translateY(-5px); /* Nhấc card-swiper lên khi hover */
+  }
+  
+  /* Hình ảnh trong card-swiper */
+  .card-swiper img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  
+  /* Đánh giá sao */
+  .rating {
+    position: absolute;
+    top: 10px; /* Cách mép trên ảnh */
+    right: 10px; /* Cách mép phải ảnh */
+    background: rgba(0, 0, 0, 0.7); /* Nền mờ để nổi bật */
+    padding: 5px 10px;
+    border-radius: 15px;
+    color: #f1c40f;
+    font-size: 14px;
+    z-index: 2;
+    font-weight: bold;
+  }
+  
+  /* Nội dung card-swiper */
+  .card-swiper-content {
+    padding: 15px;
+    text-align: center;
+    height: vh;
+  }
+  
+  .card-swiper-content h3 {
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: white; /* Mặc định là màu trắng */
+    transition: color 0.3s ease; /* Hiệu ứng chuyển màu khi hover */
+  }
+  
+  .card-swiper-content h3:hover {
+    
+    color: #f1c40f; /* Chuyển sang màu vàng khi hover */
+  }
+  
+  .card-swiper-content p {
+    font-size: 12px;
+    color: #bdc3c7;
+    transition: color 0.3s ease; /* Hiệu ứng chuyển màu khi hover */
+  }
+  
+  .card-swiper-content p:hover {
+    color: #f1c40f; /* Chuyển sang màu vàng khi hover */
+  }
+
+.swiper-button-prev, .swiper-button-next{
+ 
+    color: white;
+    background:black;   
+    height: 60px;
+    width: 60px;
+    border-radius: 100%;
+    opacity: 50%;
+}
+.swiper-pagination-bullet .swiper-pagination-bullet-active{
+    width: 20px;
+    height: 20px;
+}

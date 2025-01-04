@@ -1,0 +1,61 @@
+.comic-page {
+    max-width: 800px;
+    margin: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  .comic-controls {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 1000;
+  }
+  .comic-controls button {
+    margin-right: 5px;
+  }
+  .custom-btn {
+    color: white !important; /* Chữ màu trắng */
+    border-color: white !important; /* Đường viền màu trắng */
+  }
+  
+  .custom-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Hiệu ứng hover nhẹ */
+    color: white;
+  }
+  
+  .custom-btn i {
+    color: white; /* Icon màu trắng */
+  }
+
+  .selected {
+    background-color: #007bff;
+    color: white;
+    padding: 5px;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  .text-white {
+    cursor: pointer;
+  }
+  .dropdown-menu {
+    max-height: 200px; /* Chiều cao tối đa của dropdown */
+    overflow-y: auto; /* Hiển thị thanh cuộn dọc nếu nội dung vượt quá */
+    overflow-x: hidden; /* Ẩn thanh cuộn ngang (nếu có) */
+    scrollbar-width: thin; /* Làm thanh cuộn nhỏ hơn trên Firefox */
+    cursor: pointer;
+  }
+  
+  /* Tùy chỉnh thanh cuộn trên WebKit (Chrome, Edge, Safari) */
+  .dropdown-menu::-webkit-scrollbar {
+    width: 6px; /* Độ rộng thanh cuộn */
+  }
+  
+  .dropdown-menu::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2); /* Màu thanh kéo */
+    border-radius: 3px; /* Bo góc thanh kéo */
+  }
+  
+  .dropdown-menu::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(0, 0, 0, 0.4); /* Màu thanh kéo khi hover */
+  }
+  

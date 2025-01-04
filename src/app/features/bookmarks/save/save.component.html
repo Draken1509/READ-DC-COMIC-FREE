@@ -1,0 +1,33 @@
+<div class="container py-5">
+    <div class="row">       
+        <div class="col-md-4 " style="color: #171717;">
+          <app-left-content></app-left-content> 
+        </div>    
+        <div class="col-md-8">
+       
+            <h3 class="text-white">Comics you saved</h3>
+            <ng-container *ngIf="lstSaveComics$ | async as lstSaveComics">
+            <div class="row g-3">
+                <div  class="col-md-2" *ngFor="let c of lstSaveComics" >
+                    <div class="card" [routerLink]="['/comic',c.id]">
+                        <div class="rating">
+                        <span> 
+                            Rating: 
+                            {{ c.averageRating > 0 ? c.averageRating + ' ⭐' : 'Not rated yet' }}
+                        </span>
+                        </div>
+                        <img [src]="c.thumbnail ? c.thumbnail : 'assets/default-image.jpg'"/>  
+                        <div class="card-content">
+                        <h3>{{ (c?.name || '').length > 20 ? (c?.name | slice:0:20) + '...' : c?.name }}</h3>
+                        <p>{{ c?.comicCategory?.name }} / {{ c?.onSaleDate | date: 'dd/MM/yyyy' }}</p>
+                        </div>                                      
+                        
+                    </div>
+                </div>
+
+            </div>
+            </ng-container>
+        </div>
+    </div>
+   
+</div>

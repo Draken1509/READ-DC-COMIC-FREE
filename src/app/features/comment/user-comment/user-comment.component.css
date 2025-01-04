@@ -1,0 +1,96 @@
+.comments-box {
+  border: solid 1px #444;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  background-color: rgb(33, 37, 41);
+  color: #FFFFFF;
+  width: 100%; /* Đảm bảo mỗi box chiếm toàn chiều ngang */
+}
+
+.comments-header {
+  display: flex;
+  align-items: center;
+
+}
+
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #444;
+  margin-right: 10px;
+}
+
+.text-white {
+  color: #f2f2f2;
+  font-weight: bold;
+}
+
+.comments-meta {
+  font-size: 0.9rem;
+  color: #CCCCCC; /* Màu xám nhạt cho thông tin phụ */
+}
+
+.comments-actions {
+  display: flex;
+  gap: 5px;
+  margin-top: 10px;
+}
+.comments-actions a {
+  text-decoration: none; /* Loại bỏ gạch chân */
+  display: flex;
+  align-items: center; /* Căn giữa icon và text */
+  font-size: 0.8rem;
+}
+.action-btn {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 0.8rem;
+  transition: color 0.2s ease;
+}
+
+.action-btn:hover {
+  text-decoration: underline;
+}
+
+.replies {
+  margin-left: 20px; /* Thụt vào các phản hồi */
+  margin-top: 10px;
+}
+
+.replies .comments-box {
+  border: solid 1px #555; /* Thêm border để phân biệt bình luận con */
+  margin-bottom: 10px;
+  background-color: #2c2f33; /* Màu nền tối hơn một chút cho các phản hồi */
+}
+
+.reply-box {
+  background-color: rgb(33, 37, 41);
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+
+.reply-box textarea {
+  width: 100%;
+  border: 1px solid #555555;
+  background-color: #2C2C2C;
+  color: #FFFFFF;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.reply-box button {
+  background-color: #007BFF;
+  border: none;
+  color: #FFFFFF;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.reply-box button:hover {
+  background-color: #0056b3;
+}

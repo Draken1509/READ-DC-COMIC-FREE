@@ -1,0 +1,60 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <!-- Tên truyện -->
+      <a class="navbar-brand fw-bold" [routerLink]="['']">HOME</a>
+      <div class="d-flex">
+        <!-- Nút chức năng -->
+        <!-- <button class="btn btn-outline-success me-2" title="Read" style="color: white; border-color: white;">
+            <i class="bi bi-check-lg" style="color: white;"></i> Read
+          </button>
+          <button class="btn btn-outline-primary me-2" title="Bookmark" style="color: white; border-color: white;">
+            <i class="bi bi-bookmark" style="color: white;"></i> Bookmark
+          </button>
+          <button class="btn btn-outline-danger" title="Feedback" style="color: white; border-color: white;">
+            <i class="bi bi-exclamation-circle" style="color: white;"></i> Feedback
+        </button> -->
+          
+      </div>
+    </div>
+  </nav>
+  
+  <!-- Nội dung truyện -->
+
+<!-- comic-reader.component.html -->
+ <ng-container  *ngIf="page">
+  <div class="container mt-3" >
+    <div class="comic-page text-center">
+      <img [src]="page?.[currentPageIndex]?.imageUrl" alt="Trang truyện" class="img-fluid">
+
+    </div>
+  </div>   
+  <div class="comic-controls text-center mt-3">
+    
+    <button class="btn btn-dark me-2" title="Previous" (click)="previousPage()" [disabled]="currentPageIndex === 0">
+      <i class="bi bi-arrow-left"></i>
+    </button>
+
+    <button class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+      Page {{ currentPageIndex + 1 }} / {{ page?.length }}
+    </button>
+    <ul class="dropdown-menu dropdown-up">
+      <li *ngFor="let p of page; let i = index">
+        <a class="dropdown-item"  (click)="goToPage(i)">
+          {{ i + 1 }} /{{ page?.length }}
+        </a>
+      </li>
+    </ul>
+    
+
+    <button class="btn btn-dark ms-2" title="Next" (click)="nextPage()" [disabled]="currentPageIndex === page.length - 1">
+      <i class="bi bi-arrow-right"></i>
+    </button>
+    <button class="btn btn-dark ms-2" title="Scroll to Top" (click)="scrollToTop()">
+      <i class="bi bi-arrow-up"></i>
+    </button>
+  </div>
+ </ng-container>
+
+
+
+  

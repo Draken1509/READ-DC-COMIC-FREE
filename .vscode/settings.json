@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/fb4f06c3-cb1c-4f45-a723-775678176404/resourceGroups/DotnetMaster-LiveProject/providers/Microsoft.Web/sites/read-comic-free-trung-mama",
+    "appService.deploySubpath": "."
+}

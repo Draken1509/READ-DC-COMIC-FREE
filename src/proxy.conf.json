@@ -1,0 +1,9 @@
+{
+    "/api": {
+      "target": "https://dceu-api.azurewebsites.net",
+      "secure": false,
+      "changeOrigin": true,
+      "logLevel": "debug"
+    }
+  }
+  

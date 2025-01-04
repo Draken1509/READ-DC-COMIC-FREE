@@ -1,0 +1,12 @@
+<app-navbar  [ngClass]="{'d-none': router.url.startsWith('/comic/details/read/')}"></app-navbar>
+
+
+    <router-outlet></router-outlet> 
+
+<div class="container">
+    <app-info-extra [ngClass]="{'d-none': router.url.startsWith('/comic/details/read/')}"></app-info-extra>
+</div>
+<app-footer [ngClass]="{'d-none': router.url.startsWith('/comic/details/read/')}"></app-footer>
+
+
+

@@ -1,0 +1,63 @@
+<div class="container py-5">
+    <div class="row">
+      <div class="col-md-4" style="color: #171717;">
+        <app-left-content></app-left-content>
+      </div>
+  
+      <div class="col-md-8">
+        <h3 class="text-white">
+          Your query found {{ totalItems }} answers (Query results {{ (pageNumber - 1) * pageSize + 1 }} - {{ pageNumber * pageSize }}):
+        </h3>
+  
+        <ng-container *ngIf="comics.length > 0; else noData">
+          <div class="row g-3">
+            <div class="col-md-2" *ngFor="let c of comics">
+              <div class="card" [routerLink]="['/comic', c.id]">
+                <div class="rating">
+                  <span>
+                    Rating:
+                    {{ c.averageRating > 0 ? c.averageRating + ' ⭐' : 'Not rated yet' }}
+                  </span>
+                </div>
+                <img [src]="c.thumbnail ? c.thumbnail : 'assets/default-image.jpg'" />
+                <div class="card-content">
+                  <h3>{{ (c?.name || '').length > 20 ? (c?.name | slice:0:20) + '...' : c?.name }}</h3>
+                  <p>{{ c?.comicCategory?.name }} / {{ c?.onSaleDate | date: 'dd/MM/yyyy' }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <!-- Pagination Controls -->
+          <nav>
+            <ul class="pagination justify-content-center mt-3">
+              <li class="page-item" [class.disabled]="pageNumber === 1">
+                <button class="page-link" (click)="onPageChange(pageNumber - 1)">Previous</button>
+              </li>
+  
+              <!-- Render page numbers or '...' -->
+              <li class="page-item" *ngFor="let page of paginationPages" 
+                  [class.active]="pageNumber === page" 
+                  [class.disabled]="page === '...'">
+                <button class="page-link" 
+                        (click)="onPageChange(page)" 
+                        [disabled]="page === '...'">
+                  {{ page }}
+                </button>
+              </li>
+  
+              <li class="page-item" [class.disabled]="pageNumber === totalPages">
+                <button class="page-link" (click)="onPageChange(pageNumber + 1)">Next</button>
+              </li>
+            </ul>
+          </nav>
+        </ng-container>
+  
+        <!-- Khi không có dữ liệu -->
+        <ng-template #noData>
+          <p class="text-white">No comics available.</p>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+  

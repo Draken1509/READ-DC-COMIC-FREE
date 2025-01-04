@@ -1,0 +1,43 @@
+    <!-- Top-Rated Comics -->
+
+   
+        <h3 class="text-white">Top-rated comics</h3>
+        <ng-container  *ngIf="highestRatingComic$ | async as highestRatingComic">
+          <ul  class="list-group  border: none;">
+            <li *ngFor="let c of highestRatingComic" [routerLink]="['/comic',c.id]" style="background-color: #171717; cursor: pointer;" class="list-group-item flex align-items-center  text-white  border: none;">
+                <img [src]="c.thumbnail ? c.thumbnail : 'assets/default-image.jpg'" alt="Absolute Batman" class="me-2" style="width: 50px; height: 80px; object-fit: cover;">
+                <span class="comic-title">{{c.name}}</span>
+            </li>       
+              
+        </ul>
+        </ng-container>
+
+<!-- 
+        
+        <h3 class="text-white mt-3">Just added: fresh comics</h3>
+        <ul  class="list-group  border: none;">
+            <li style="background-color: #171717; cursor: pointer;" class="list-group-item flex align-items-center  text-white  border: none;">
+                <img src="/assets/cawoman.png" alt="Absolute Batman" class="me-2" style="width: 50px; height: 80px; object-fit: cover;">
+                <span class="comic-title">Absolute Batman (2024-)</span>
+              </li>
+              <li style="background-color: #171717; cursor: pointer;" class="list-group-item flex align-items-center  text-white  border: none;">
+                <img src="/assets/cawoman.png" alt="Absolute Batman" class="me-2" style="width: 50px; height: 80px; object-fit: cover;">
+                <span class="comic-title">Absolute Batman (2024-)</span>
+              </li>
+              <li style="background-color: #171717; cursor: pointer;" class="list-group-item flex align-items-center  text-white  border: none;">
+                <img src="/assets/cawoman.png" alt="Absolute Batman" class="me-2" style="width: 50px; height: 80px; object-fit: cover;">
+                <span class="comic-title">Absolute Batman (2024-)</span>
+              </li>
+              <li style="background-color: #171717; cursor: pointer;" class="list-group-item flex align-items-center  text-white  border: none;">
+                <img src="/assets/cawoman.png" alt="Absolute Batman" class="me-2" style="width: 50px; height: 80px; object-fit: cover;">
+                <span class="comic-title">Absolute Batman (2024-)</span>
+              </li>
+              <li style="background-color: #171717; cursor: pointer;" class="list-group-item flex align-items-center  text-white  border: none;">
+                <img src="/assets/cawoman.png" alt="Absolute Batman" class="me-2" style="width: 50px; height: 80px; object-fit: cover;">
+                <span class="comic-title">Absolute Batman (2024-)</span>
+              </li>
+              <li style="background-color: #171717;cursor: pointer;" class="list-group-item flex align-items-center  text-white  border: none;">               
+                <span class="comic-title">Show All(15))</span>
+              </li>
+        </ul>
+     -->

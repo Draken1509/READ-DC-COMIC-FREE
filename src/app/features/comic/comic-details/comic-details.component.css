@@ -1,0 +1,135 @@
+.comic-card {
+    
+    /* background-color: #1e1e1e; */
+    padding: 20px;
+    border-radius: 8px;
+  }
+  .comic-image img {
+    width: 50vh;    
+    border-radius: 8px;
+  }
+
+  .btn-custom {
+    background-color: #ffcc00;
+    color: #000;
+    font-weight: bold;
+  }
+  .btn-custom:hover {
+    background-color: #ffaa00;
+  }
+  .nav-tabs .nav-link {
+    color: #fff;
+  }
+  .nav-tabs .nav-link.active {
+    background-color: #ffcc00;
+    color: #000;
+    font-weight: bold;
+  }
+  .nav-tabs .nav-link:hover {
+    color: #ffcc00;
+  }
+  .tab-content {
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 8px;
+  }
+  .chapter-list {
+    background-color: #1c1c1c; /* Nền đen tương tự giao diện */
+    color: #fff; /* Chữ màu trắng */
+    padding: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  .list-group-item {
+    background-color: #292929; /* Nền cho các item */
+    color: #fff; /* Chữ màu trắng */
+    border: none; /* Xóa đường viền mặc định */
+  }
+  
+  .list-group-item:hover {
+    background-color: #333; /* Màu khi hover */
+  }
+  
+  .badge.bg-dark {
+    font-size: 14px;
+    padding: 5px 10px;
+  }
+  
+  .text-muted {
+    font-size: 14px;
+  }
+  span {
+    color: #bdc3c7 !important;
+  }
+
+  /* css star */
+  .rating-container {
+    color: #ffffff; /* Màu chữ chính */
+  }
+  
+  .rating-text {
+    font-size: 14px;
+    color: #bdc3c7; /* Màu chữ cho số vote */
+  }
+  
+  .stars {
+    display: flex;         /* Sử dụng flexbox */
+    justify-content: flex-start; /* Căn trái các phần tử */
+    align-items: center;    /* Căn giữa theo chiều dọc */
+  }
+  
+  .stars i {
+    margin-right: 5px;      /* Khoảng cách giữa các sao */
+    font-size: 1.5rem;      /* Kích thước sao */
+    color: gold;            /* Màu sắc của sao */
+  }
+  p{
+    color: #bdc3c7;
+  }
+  /* css  progress-bar */
+  .progress-bar {   
+    background-color: #ffc107;
+}
+ul {
+    list-style: none;
+}
+
+/* cmt */
+/* .comment-box {
+    background-color: #2b2b2b;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+.comment-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #444;
+}
+.comment-meta {
+    font-size: 0.9rem;
+    color: #bbb;
+}
+.comment-actions {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.action-btn {
+    color: #bbb;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.action-btn:hover {
+    color: #ffc107;
+} */

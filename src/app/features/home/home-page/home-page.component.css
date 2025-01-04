@@ -1,0 +1,71 @@
+.card {
+    width: auto;
+    background: #1c1c1e;
+    color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    position: relative; /* Để định vị phần đánh giá sao */
+    transition: transform 0.3s ease; /* Hiệu ứng khi hover card */
+    cursor: pointer;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px); /* Nhấc card lên khi hover */
+  }
+  
+  /* Hình ảnh trong card */
+  .card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  
+  /* Đánh giá sao */
+  .rating {
+    position: absolute;
+    top: 10px; /* Cách mép trên ảnh */
+    right: 10px; /* Cách mép phải ảnh */
+    background: rgba(0, 0, 0, 0.7); /* Nền mờ để nổi bật */
+    padding: 5px 10px;
+    border-radius: 15px;
+    color: #f1c40f;
+    font-size: 14px;
+    z-index: 2;
+    font-weight: bold;
+  }
+  
+  /* Nội dung card */
+  .card-content {
+    padding: 15px;
+    text-align: center;
+  }
+  
+  .card-content h3 {
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: white; /* Mặc định là màu trắng */
+    transition: color 0.3s ease; /* Hiệu ứng chuyển màu khi hover */
+  }
+  
+  .card-content h3:hover {        
+    color: #f1c40f; /* Chuyển sang màu vàng khi hover */
+  }
+  
+  .card-content p {    
+    font-size: 12px;
+    color: #bdc3c7;
+    transition: color 0.3s ease; /* Hiệu ứng chuyển màu khi hover */
+  }
+  
+  .card-content p:hover {
+    color: #f1c40f; /* Chuyển sang màu vàng khi hover */
+  }
+  .list-group-item {
+    border: none; /* Bỏ đường viền */
+    border-bottom: 2px solid #171717; /* Tùy chỉnh viền dưới */
+    margin-top: 2px;
+  }
+
+

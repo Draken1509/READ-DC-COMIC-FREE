@@ -1,0 +1,91 @@
+
+
+<h3 class="text-white">Hot new releases in comics</h3>
+<ng-container *ngIf="lastestComic$ | async as lastestComic">
+<div class="row g-3">
+    <div  class="col-md-2" *ngFor="let c of lastestComic" >
+        <div class="card" [routerLink]="['/comic',c.id]">
+            <div class="rating">
+              <span> 
+                Rating: 
+                <span>{{ c.averageRating > 0 ? c.averageRating + ' ⭐' : 'Not rated yet' }}</span>
+              </span>
+            </div>
+            <img [src]="c.thumbnail ? c.thumbnail : 'assets/default-image.jpg'"/>  
+            <div class="card-content">            
+              <h3>{{ (c?.name || '').length > 8 ? (c?.name | slice:0:8) + '...' : c?.name }}</h3>
+              <p>{{ c?.comicCategory?.name }} / {{ c?.onSaleDate | date: 'dd/MM/yyyy' }}</p>
+            </div>                                      
+            
+          </div>
+    </div>
+
+</div>
+</ng-container>
+
+
+<h3 class="text-white mt-4">The newest comic releases</h3>
+
+<ng-container  *ngIf="comics"; else nodata >
+  <div class="mt-4">
+    <div class="row g-3" style="cursor: pointer;">
+    
+      <div class="col-md-6">
+        <div *ngFor="let c of comics | slice:0:(comics.length / 2)" class="d-flex mb-3">
+          <img [src]="c.thumbnail ? c.thumbnail : 'assets/default-image.jpg'" class="me-3" style="width: 70px; height: auto; border-radius: 5px;" />
+          <div style="line-height: 1;" [routerLink]="['/comic',c.id]">
+            <p>{{ c.name }}</p>
+            <small style="color: #83848f; font-weight: bold;">
+              {{c.onSaleDate | date:'dd/MM/yyyy'}} - {{ c.name }}
+            </small>          
+            <small style="display: block;" class="mt-1">
+              Rating: 
+              {{ c.averageRating > 0 ? c.averageRating + ' ⭐' : 'Not rated yet' }}
+            </small>
+                      
+          </div>
+        </div>
+      </div>   
+      <div class="col-md-6">
+        <div *ngFor="let c of comics | slice:(comics.length / 2):comics.length" class="d-flex mb-3">
+          <img  [src]="c.thumbnail || 'assets/default-image.jpg'" class="me-3" style="width: 70px; height: auto; border-radius: 5px;" />
+          <div style="line-height: 1;" [routerLink]="['/comic',c.id]">
+            <p>{{ c.name }}</p>
+            <small style="color: #83848f; font-weight: bold;">
+              {{c.onSaleDate | date:'dd/MM/yyyy'}} - {{ c.name }}
+            </small>          
+            <small style="display: block;" class="mt-1">
+              Rating: 
+              {{ c.averageRating > 0 ? c.averageRating + ' ⭐' : 'Not rated yet' }}
+            </small>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <nav>
+      <ul class="pagination justify-content-center mt-3">
+        <li class="page-item" [class.disabled]="pageNumber === 1">
+          <button class="page-link" (click)="onPageChange(pageNumber - 1)">Previous</button>
+        </li>
+  
+        <!-- Render page numbers or '...' -->
+        <li class="page-item" *ngFor="let page of paginationPages" 
+            [class.active]="pageNumber === page" 
+            [class.disabled]="page === '...'">
+          <button class="page-link" 
+                  (click)="onPageChange(page)" 
+                  [disabled]="page === '...'">
+            {{ page }}
+          </button>
+        </li>
+  
+        <li class="page-item" [class.disabled]="pageNumber === totalPages">
+          <button class="page-link" (click)="onPageChange(pageNumber + 1)">Next</button>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+</ng-container>
